@@ -6,10 +6,7 @@
 //
 // Table starts here. Lines in format -- A "@UnitName or @RoleDescription" TO "@Kitname" KIT
 
-A "1'1 Squad Leader"	TO "kit_ussf_sl" KIT,
-A "Combat Life Saver"	TO "kit_ussf_cls" KIT,
-A "Team Leader"		TO "kit_ussf_tl" KIT,
-A "Automatic Rifleman"	TO "kit_ussf_ar" KIT,
-A "Grenadier"		TO "kit_ussf_gr" KIT,
-A "JTAC"			TO "kit_ussf_jtac" KIT,
-A "Сапер"		TO "kit_ussf_demo" KIT
+A "Game Server Officer - Instructor"	TO "kit_gso_blue" KIT,
+A "Game Server Officer Trainee #1"	TO "kit_gso_green" KIT,
+A "Game Server Officer Trainee #2"	TO "kit_gso_red" KIT,
+A "Game Server Officer Trainee #3"	TO "kit_gso_yellow" KIT

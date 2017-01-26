@@ -12,8 +12,61 @@
 // Macros to give the item only if daytime is in given inerval (e.g. to give NVGoggles only at night)
 #define NIGHT_ITEM(X)	if (daytime < 9 || daytime > 18) then { X } else { "" }
 
+/*
+ *	GSO
+ */
+kit_gso_blue =
+	[
+	["<EQUIPEMENT >>  ","U_Rangemaster","CUP_V_B_LHDVest_Blue","","H_Cap_blk",""],
+	["<PRIMARY WEAPON >>  ","","",["","","",""]],
+	["<LAUNCHER WEAPON >>  ","","",["","","",""]],
+	["<HANDGUN WEAPON >>  ","","",["","","",""]],
+	["<ASSIGNED ITEMS >>  ","ItemMap","ItemCompass","ItemWatch","tf_anprc152_1"],
+	["<UNIFORM ITEMS >> ",[["ACE_fieldDressing",2],["ACE_morphine",1]]],
+	["<VEST ITEMS >> ",[]],
+	["<BACKPACK ITEMS >> ",[]]
+];
 
-#define	USSF_HEAD	[TRYK_H_headsetcap_od","TRYK_H_Booniehat_MARPAT_WOOD","rhsusf_ach_bare_ess","rhsusf_ach_helmet_M81"]
+kit_gso_green =
+	[
+	["<EQUIPEMENT >>  ","U_Rangemaster","CUP_V_B_LHDVest_Green","","H_Cap_tan",""],
+	["<PRIMARY WEAPON >>  ","","",["","","",""]],
+	["<LAUNCHER WEAPON >>  ","","",["","","",""]],
+	["<HANDGUN WEAPON >>  ","","",["","","",""]],
+	["<ASSIGNED ITEMS >>  ","ItemMap","ItemCompass","ItemWatch","tf_anprc152_1"],
+	["<UNIFORM ITEMS >> ",[["ACE_fieldDressing",2],["ACE_morphine",1]]],
+	["<VEST ITEMS >> ",[]],
+	["<BACKPACK ITEMS >> ",[]]
+];
+
+kit_gso_red =
+	[
+	["<EQUIPEMENT >>  ","U_Rangemaster","CUP_V_B_LHDVest_Red","","H_Cap_oli",""],
+	["<PRIMARY WEAPON >>  ","","",["","","",""]],
+	["<LAUNCHER WEAPON >>  ","","",["","","",""]],
+	["<HANDGUN WEAPON >>  ","","",["","","",""]],
+	["<ASSIGNED ITEMS >>  ","ItemMap","ItemCompass","ItemWatch","tf_anprc152_1"],
+	["<UNIFORM ITEMS >> ",[["ACE_fieldDressing",2],["ACE_morphine",1]]],
+	["<VEST ITEMS >> ",[]],
+	["<BACKPACK ITEMS >> ",[]]
+];
+
+kit_gso_yellow =
+	[
+	["<EQUIPEMENT >>  ","U_Rangemaster","CUP_V_B_LHDVest_Yellow","","H_Cap_blu",""],
+	["<PRIMARY WEAPON >>  ","","",["","","",""]],
+	["<LAUNCHER WEAPON >>  ","","",["","","",""]],
+	["<HANDGUN WEAPON >>  ","","",["","","",""]],
+	["<ASSIGNED ITEMS >>  ","ItemMap","ItemCompass","ItemWatch","tf_anprc152_1"],
+	["<UNIFORM ITEMS >> ",[["ACE_fieldDressing",2],["ACE_morphine",1]]],
+	["<VEST ITEMS >> ",[]],
+	["<BACKPACK ITEMS >> ",[]]
+];
+
+/*
+ * 	USSF
+ */
+#define	USSF_HEAD	["TRYK_H_headsetcap_od","TRYK_H_Booniehat_MARPAT_WOOD","rhsusf_ach_bare_ess","rhsusf_ach_helmet_M81"]
 kit_ussf_r =
 	[
 	["<EQUIPEMENT >>  ","CUP_U_B_FR_Scout2","rhsusf_spc_squadleader","",USSF_HEAD,""],

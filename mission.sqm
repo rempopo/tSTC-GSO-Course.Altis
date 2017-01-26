@@ -8,11 +8,11 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=40;
+		nextID=42;
 	};
 	class MarkerIDProvider
 	{
-		nextID=2;
+		nextID=3;
 	};
 	class LayerIndexProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={17596.336,425.18301,13603.689};
-		dir[]={0.017838759,-0.5568319,0.83055645};
-		up[]={0.011958494,0.83058351,0.55673921};
-		aside[]={0.99987257,-4.1766907e-007,-0.021467816};
+		pos[]={17482.496,76.11779,14351.129};
+		dir[]={0.83255923,-0.52375519,0.18093687};
+		up[]={0.51185346,0.85182291,0.11123844};
+		aside[]={0.21239913,-1.3373938e-007,-0.97729236};
 	};
 };
 binarizationWanted=0;
@@ -104,6 +104,7 @@ class AddonsMetaData
 randomSeed=6160675;
 class ScenarioData
 {
+	author="Tactical Shift";
 	overviewText="GSO role training facility";
 	overViewPicture="overview.jpg";
 	overViewPictureLocked="overview.jpg";
@@ -239,7 +240,7 @@ class Mission
 		lightningsForced=1;
 		wavesForced=1;
 		windForced=1;
-		year=2035;
+		year=2017;
 		month=6;
 		day=24;
 		hour=12;
@@ -249,7 +250,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			dataType="Group";
@@ -270,7 +271,7 @@ class Mission
 					class Attributes
 					{
 						name="Curator1";
-						description="Game Server Officer";
+						description="Game Server Officer - Instructor";
 						isPlayer=1;
 						isPlayable=1;
 					};
@@ -298,7 +299,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
 					};
 				};
 				class Item1
@@ -314,7 +334,7 @@ class Mission
 					class Attributes
 					{
 						name="Curator2";
-						description="Game Server Officer";
+						description="Game Server Officer Trainee #1";
 						isPlayable=1;
 					};
 					id=3;
@@ -341,7 +361,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
 					};
 				};
 				class Item2
@@ -357,7 +396,7 @@ class Mission
 					class Attributes
 					{
 						name="Curator3";
-						description="Game Server Officer";
+						description="Game Server Officer Trainee #2";
 						isPlayable=1;
 					};
 					id=5;
@@ -384,7 +423,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
 					};
 				};
 				class Item3
@@ -400,7 +458,7 @@ class Mission
 					class Attributes
 					{
 						name="Curator4";
-						description="Game Server Officer";
+						description="Game Server Officer Trainee #3";
 						isPlayable=1;
 					};
 					id=7;
@@ -427,7 +485,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
 					};
 				};
 			};
@@ -970,8 +1047,8 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={17532.705,6.3508043,14364.404};
-						angles[]={6.2631893,0,0.029324362};
+						position[]={17528.881,7.47229,14420.729};
+						angles[]={6.2525272,0,0.012000273};
 					};
 					name="tSF_CCP";
 					id=38;
@@ -992,7 +1069,7 @@ class Mission
 				};
 			};
 			id=13;
-			atlOffset=0.0027265549;
+			atlOffset=-0.20344496;
 		};
 		class Item4
 		{
@@ -1078,7 +1155,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={18764.053,31.848988,14401.681};
-					angle=2.8800721;
+					angle=2.8800719;
 					class Attributes
 					{
 						sizeA=300;
@@ -1092,7 +1169,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={18616.379,26.079962,14682.903};
-					angle=3.699923;
+					angle=3.6999226;
 					class Attributes
 					{
 						sizeA=200;
@@ -1104,7 +1181,7 @@ class Mission
 				};
 			};
 			id=18;
-			atlOffset=-0.15556717;
+			atlOffset=4.913023;
 		};
 		class Item5
 		{
@@ -1184,6 +1261,21 @@ class Mission
 			};
 			id=36;
 			atlOffset=0.078512192;
+		};
+		class Item7
+		{
+			dataType="Marker";
+			position[]={19078.174,16.348547,15072.346};
+			name="marker_3";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=500;
+			b=1000;
+			angle=236.03305;
+			drawBorder=1;
+			id=41;
 		};
 	};
 	class Connections
