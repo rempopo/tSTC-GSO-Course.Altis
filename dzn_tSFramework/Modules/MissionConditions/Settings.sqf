@@ -10,7 +10,7 @@ PlayersBaseTrigger = if (!isNil "baseTrg") then { baseTrg } else { "" };
 /*
  * Default sleep interval between Mission Conditions checks (seconds)
 */
-tSF_MissionCondition_DefaultCheckTimer 			= 15;
+tSF_MissionCondition_DefaultCheckTimer 			= 60;
 
 /*
  * List of mission Ends and Conditions (up to 20 conditions allowed)
@@ -41,4 +41,6 @@ tSF_MissionCondition_DefaultCheckTimer 			= 15;
 // if (isNil "ts_tasks") then { ts_tasks = 0 };
 
 MissionCondition1 = [ "WIN", "false", "All objectives done" ];
-MissionCondition2 = [ "WIPED", "{alive _x} count (call BIS_fnc_listPlayers) < 1", "All dead", 30 ];
+MissionCondition2 = [ "FAIL", "false", "Failed to complete some objective"];
+MissionCondition3 = [ "TOTAL_FAIL", "false", "No objective done and retreated" ];
+MissionCondition4 = [ "WIPED", "false", "All dead"];

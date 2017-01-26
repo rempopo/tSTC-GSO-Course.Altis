@@ -1,5 +1,5 @@
 dzn_fnc_adminTools_checkIsAdmin = {
-	(serverCommandAvailable "#logout") || !(isMultiplayer) || isServer
+	true
 };
 
 dzn_fnc_adminTools_addTopic = {	
@@ -50,8 +50,10 @@ dzn_fnc_adminTools_callEndings = {
 	
 	if !(_Result) exitWith {};
 	
-	MissionFinished = _ending;
-	publicVariable "MissionFinished";
+	(format ["Mission End ( %1 ) is called by %2", _ending, name player]) remoteExec ["hint"];
+	
+	// MissionFinished = _ending;
+	// publicVariable "MissionFinished";
 };
 
 tSF_End = {
