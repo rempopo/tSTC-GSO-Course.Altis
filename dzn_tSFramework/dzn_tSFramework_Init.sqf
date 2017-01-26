@@ -12,7 +12,7 @@
 // **************************
 //  MODULES
 // **************************
-tSF_module_MissionDefaults = true;
+tSF_module_MissionDefaults 	= true;
 tSF_module_JIPTeleport = true;
 tSF_module_MissionConditions = true;
 
@@ -21,10 +21,10 @@ tSF_module_Briefing = true;
 tSF_module_tSNotes = true;
 tSF_module_tSNotesSettings = true;
 
-tSF_module_CCP = false;
+tSF_module_CCP = true;
 tSF_module_Interactives = false;
-tSF_module_InteractivesACE = false;
-tSF_module_AirborneSupport = false;
+tSF_module_InteractivesACE = true;
+tSF_module_AirborneSupport = true;
 
 tSF_module_EditorVehicleCrew = false;
 tSF_module_EditorUnitBehavior = false;

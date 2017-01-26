@@ -12,7 +12,7 @@ tSF_AirborneSupport_initTimeout	=	5;
  *		"Any"			- any player
  *
  */
-tSF_AirborneSupport_AuthorizedUsers	= ["Admin","Platoon Sergeant","Зам. командира взвода","Support Officer"];
+tSF_AirborneSupport_AuthorizedUsers	= ["Admin","Game Server Officer"];
 
 /*
  *	Allow authorized units to teleport from tSF_AirborneSupport_ReturnPoint to their Squad

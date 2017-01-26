@@ -167,8 +167,7 @@ tSF_CCP_LoopAnimation = {
 	private _animation = _this;
 	
 	while {player getVariable 'tSF_CCP_isHealing'} do {
-		if (animationState player != _animation ) then {
-			player switchMove _animation ;
+		if (animationState player != _animation ) then {			
 			player playMoveNow _animation;
 		};
 	};
