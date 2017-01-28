@@ -63,7 +63,7 @@ dzn_fnc_dynai_initZoneKeypoints = {
 			private _pos = getPosASL _x;
 			_keypoints pushBack [_pos select 0, _pos select 1, 0];
 		};
-	} forEach (synchronizedObjects _x);
+	} forEach (synchronizedObjects _this);
 	
 	_keypoints
 };
@@ -86,6 +86,8 @@ dzn_fnc_dynai_initZones = {
 		
 		_zone setVariable ["dzn_dynai_initialized", false];
 		_zoneBuildings = [];
+		
+		// Get propertis from configuration arra
 		_properties = [];
 		{
 			if ( (_x select 0) == str (_zone) ) then {
@@ -94,10 +96,9 @@ dzn_fnc_dynai_initZones = {
 		} forEach dzn_dynai_zoneProperties;
 		if (_properties isEqualTo []) exitWith { ["dzn_dynai :: There is no properties for DynAI zone '%1'", str(_x)] call BIS_fnc_error; };
 
-		_locations = [];
-		
 		// Get triggers and convert them into locations
-		_syncObj = synchronizedObjects _x;
+		_locations = [];
+		_syncObj = synchronizedObjects _zone;
 		{
 			if (_x isKindOf "EmptyDetector") then {
 				_loc = [_x, true] call dzn_fnc_convertTriggerToLocation;
@@ -125,12 +126,11 @@ dzn_fnc_dynai_initZones = {
 			};
 		} forEach _locations;
 
-		// Keypoints
-		_keypoints = _x call dzn_fnc_dynai_initZoneKeypoints;
+		// Get Keypoints
+		_keypoints = _zone call dzn_fnc_dynai_initZoneKeypoints;
 		if (_keypoints isEqualTo []) then {			
 			_keypoints = "randomize";
-		};
-				
+		};	
 		sleep 1;
 		
 		_zone setPosASL _locPos;
@@ -140,18 +140,18 @@ dzn_fnc_dynai_initZones = {
 		_properties = _properties + [_zoneBuildings];
 		
 		[_zone, [ 
-			["dzn_dynai_area", _locations]
-			, ["dzn_dynai_keypoints", _keypoints]
-			, ["dzn_dynai_isActive", _properties select 2]
-			, ["dzn_dynai_properties", _properties]
-			, ["dzn_dynai_groups", []]
-			, ["dzn_dynai_initialized", true]				
+			["dzn_dynai_area", _locations, dzn_dynai_pubVars]
+			, ["dzn_dynai_keypoints", _keypoints, dzn_dynai_pubVars]
+			, ["dzn_dynai_isActive", _properties select 2, dzn_dynai_pubVars]
+			, ["dzn_dynai_properties", _properties, dzn_dynai_pubVars]
+			, ["dzn_dynai_groups", [], dzn_dynai_pubVars]
+			, ["dzn_dynai_initialized", true, dzn_dynai_pubVars]				
 		], true] call dzn_fnc_setVars;
 		
 	} forEach _modules;
 };
 
-dzn_fnc_dynai_getZoneVar = {
+dzn_fnc_dynai_getZoneVar = {	
 	
 	/*
 	 * @Property = [@Zone, @PropertyName] call dzn_fnc_dynai_getZoneVar
@@ -230,15 +230,13 @@ dzn_fnc_dynai_getGroupVar = {
 dzn_fnc_dynai_startZones = {	
 	/*
 		Start all zones
-		INPUT: 	NULL
+		INPUT: 		NULL
 		OUTPUT: 	NULL
 	*/
 	
 	if !(call dzn_fnc_dynai_initValidate) exitWith {};
 	
-	private ["_modules"];
-	
-	_modules = synchronizedObjects dzn_dynai_core;
+	private _modules = synchronizedObjects dzn_dynai_core;
 	
 	{		
 		_x spawn {
@@ -247,7 +245,7 @@ dzn_fnc_dynai_startZones = {
 			waitUntil {!isNil {GET_PROP(_this,"isActive")} && {GET_PROP(_this,"isActive")}};
 			if (DEBUG) then { player sideChat format ["dzn_dynai :: Creating zone '%1'", str(_this)]; };			
 			
-			(GET_PROP(_this,"properties")) call dzn_fnc_dynai_createZone;
+			(GET_PROP(_this,"properties")) call dzn_fnc_dynai_createZone;			
 		};
 		sleep 0.5;	
 	} forEach _modules;	
@@ -260,6 +258,11 @@ dzn_fnc_dynai_createZone = {
 		OUTPUT: 	NULL
 	*/
 	
+	_this execFSM "dzn_dynai\FSMs\dzn_dynai_createZone.fsm";
+	if (true) exitWith {};
+	
+	
+	
 	private [
 		"_side","_name","_area","_wps"
 		,"_refUnits","_behavior", "_zonePos","_count","_groupUnits","_groupSkill"
@@ -268,14 +271,8 @@ dzn_fnc_dynai_createZone = {
 		,"_vehPos","_vehPosEmpty"
 		,"_zoneBuildings","_zoneRoads"	
 	];
+	params ["_name", "_side", "_area", "_wps", "_refUnits", "_behavior", "_zoneBuildings"];
 
-	_name = _this select 0;
-	_side = _this select 1;
-	_area = _this select 3;
-	_wps = _this select 4;
-	_refUnits = _this select 5;
-	_behavior = _this select 6;
-	_zoneBuildings = _this select 7;
 	_zoneRoads = _area call dzn_fnc_getLocationRoads;
 	
 	_zoneUsedBuildings = [];

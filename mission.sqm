@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=4;
+		nextID=20;
 	};
 	class Camera
 	{
-		pos[]={17482.496,76.11779,14351.129};
-		dir[]={0.83255923,-0.52375519,0.18093687};
-		up[]={0.51185346,0.85182291,0.11123844};
-		aside[]={0.21239913,-1.3373938e-007,-0.97729236};
+		pos[]={17503.689,207.55609,14448.944};
+		dir[]={0.40977386,-0.72293276,0.55648005};
+		up[]={0.42866567,0.69089693,0.58213425};
+		aside[]={0.80532771,-2.1652959e-006,-0.59300864};
 	};
 };
 binarizationWanted=0;
@@ -158,38 +158,6 @@ class CustomAttributes
 						type[]=
 						{
 							"ARRAY"
-						};
-					};
-					class value
-					{
-						items=2;
-						class Item0
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="ace_spectator";
-							};
-						};
-						class Item1
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="EndMission";
-							};
 						};
 					};
 				};
@@ -1169,7 +1137,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={18616.379,26.079962,14682.903};
-					angle=3.6999226;
+					angle=3.6999223;
 					class Attributes
 					{
 						sizeA=200;
@@ -1227,6 +1195,7 @@ class Mission
 					init="this setVariable ['tSF_AirborneSupport', 'Foxhound-1-1'];";
 					id=35;
 					type="Logic";
+					atlOffset=0.12263489;
 				};
 				class Item2
 				{
@@ -1260,7 +1229,7 @@ class Mission
 				};
 			};
 			id=36;
-			atlOffset=0.078512192;
+			atlOffset=0.078511238;
 		};
 		class Item7
 		{
