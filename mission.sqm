@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=20;
+		nextID=24;
 	};
 	class Camera
 	{
@@ -194,7 +194,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="[tSTC] GSO Course";
+		briefingName="[tSTC] GSO Course (1A)";
 		overviewText="GSO role training facility";
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
